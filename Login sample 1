@@ -1,0 +1,43 @@
+Feature: login website	
+	
+	Background: 
+	  Given user on login page
+	  And user enters <username> in the username field and has entered a <password> in the password field
+	  And the button "google" is available
+	  And the button "facebook" is available
+	
+	Scenario Outline: Login correct using username
+	  When the <button> is clicked
+	  Then the <page> should load
+	
+	Examples:
+	  | user | password | button | page |
+  	| satrio | 123 | login | dashboard |
+	
+	Scenario Outline: Login incorrect using username
+  	When the <button> is clicked
+	  Then the message <message> should be displayed
+	
+	Examples:
+  	| user | password | button | message |
+	  | | 123 | login | Please fill out this field |
+	  | satrio | | login | Please fill out this field |
+	  | | | login | Please fill out this field |
+	
+	Scenario: Login correct using email
+	  When the <button> is clicked
+	  Then the <page> should load
+	
+	Examples:
+	  | user | password | button | page |
+	  | satrio@gmail.com | 123 | login | dashboard |
+	
+	Scenario: Login incorrect using email
+	   When the <button> is clicked
+  	Then the message <message> should be displayed
+	
+	Examples:
+	  | user | password | button | message |
+	  | | 123 | login | Please fill out this field |
+	  | satrio | | login | Please fill out this field |
+	  | | | login | Please fill out this field |
