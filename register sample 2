@@ -1,0 +1,17 @@
+Feature: Registration	
+	
+	Background:
+    Given User on the register page
+    And the button "google" is available
+    And the button "facebook" is available
+    And the button "email" is available
+    
+  Scenario: Register with email
+    When User click on button 'register by email'
+    And user fill and submit registration form with
+      | name | email | username | password | confirmpassword |
+      | satrio | satrio@gmail.com | satriostock | satrio123 | satrio123 |
+    And user type "85163522707" and send verification
+    And user click verify phone number
+    And user input and submit verification code
+    Then User direct to 'Upload Profile Picture' page
