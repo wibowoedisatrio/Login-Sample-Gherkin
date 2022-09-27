@@ -1,32 +1,32 @@
 Feature: Registration	
 	
 	Background:
-    Given User on the register page
-    And the button "google" is available
-    And the button "facebook" is available
-    And the button "email" is available
+	    Given User on the register page
+	    And the button "google" is available
+	    And the button "facebook" is available
+	    And the button "email" is available
 	
 	Scenario: Register with email
-    When User click on button 'register by email'
-    And User fill the registration form with
-      | name | email | username | password | confirmpassword |
-      | satrio | satrio@gmail.com | satriostock | satrio123 | satrio123 |
-    User click on button 'register'
-    User direct to sms verification page
+	    When User click on button 'register by email'
+	    And User fill the registration form with
+	      | name | email | username | password | confirmpassword |
+	      | satrio | satrio@gmail.com | satriostock | satrio123 | satrio123 |
+	    User click on button 'register'
+	    User direct to sms verification page
 	
 	
-	When User on the sms verification page
-    And User type '85163522707' in 'phone number'
-    And User click on 'send verification'
-    Then User direct to successful phone verification page
+	    When User on the sms verification page
+	    And User type '85163522707' in 'phone number'
+	    And User click on 'send verification'
+	    Then User direct to successful phone verification page
 	
 	
-	When User on successful phone verification page
-    And User click on 'verify phone number'
-    Then User direct to verification code page
+	    When User on successful phone verification page
+	    And User click on 'verify phone number'
+	    Then User direct to verification code page
 	
 	Scenario: Verify Successfully
-    When User on the verification code page
-    And User type keyverification on 'verification code'
-    And User click on 'verification'
-    Then User direct to 'Upload Profile Picture' page
+	    When User on the verification code page
+	    And User type keyverification on 'verification code'
+	    And User click on 'verification'
+	    Then User direct to 'Upload Profile Picture' page
