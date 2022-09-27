@@ -1,8 +1,8 @@
 Feature: login website	
 	
-	Background : 
-	  Given user on login page
-	  And user enters <username> in the username field and has entered a <password> in the password field
+   Background : 
+    Given user on login page
+    And user enters <username> in the username field and has entered a <password> in the password field
     And the button "google" is available
     And the button "facebook" is available
   
