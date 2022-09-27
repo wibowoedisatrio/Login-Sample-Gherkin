@@ -12,14 +12,14 @@ Feature: login website
 	
 	Examples:
 	  | user | password | button | page |
-  	| satrio | 123 | login | dashboard |
+  	  | satrio | 123 | login | dashboard |
 	
 	Scenario Outline: Login incorrect using username
-  	When the <button> is clicked
+  	  When the <button> is clicked
 	  Then the message <message> should be displayed
 	
 	Examples:
-  	| user | password | button | message |
+  	  | user | password | button | message |
 	  | | 123 | login | Please fill out this field |
 	  | satrio | | login | Please fill out this field |
 	  | | | login | Please fill out this field |
@@ -34,7 +34,7 @@ Feature: login website
 	
 	Scenario: Login incorrect using email
 	   When the <button> is clicked
-  	Then the message <message> should be displayed
+  	   Then the message <message> should be displayed
 	
 	Examples:
 	  | user | password | button | message |
